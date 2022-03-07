@@ -1,0 +1,34 @@
+---
+title: "Homework 6"
+author: "Gavin Hyde"
+date: "3/7/2022"
+output: html_document
+---
+
+Loading the data
+````{r}
+HAPPY = readRDS("data/HAPPY.rds")
+````
+
+Data cleaning: the values “IAP”, “DK” and “NA” all encode missing values. Replace all of these instances by the value NA.
+````{r}
+HAPPY <- replace(HAPPY, HAPPY == "IAP", NA)
+HAPPY <- replace(HAPPY, HAPPY == "DK", NA)
+HAPPY <- replace(HAPPY, HAPPY == "NA", NA)
+````
+
+
+Check the type of the variable and cast into the right type (factor variable for categorical variables). For age, change “89 OR OLDER” to 89 and assume the variable should be numeric.
+````{r}
+HAPPY <- HAPPY %>% mutate(
+  age = replace(AGE, AGE == "89 AND OLDER", 89),
+  age = as.numeric(age)
+) %>% select(-AGE)
+````
+
+Not sure if this should be used in the assignment
+Happy <- Happy %>% mutate(
+  degree = factor(tolower(DEGREE)),
+  degree = factor(degree, levels = c("lt high school", "high school", "junior college", 
+  "bachelor", "graduate school"))
+) %>% select(-DEGREE)
