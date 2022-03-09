@@ -48,6 +48,8 @@ HAPPY %>% ggplot(aes(x=MARITAL,fill=HAPPY)) +
   facet_wrap(~FINRELA) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ````
+I looked into what connection financial and marital status had on how happy individuals are. It seems that most very happy people are married with average income. This is somewhat misleading however, since there are most people who are in the average income bracket. It seems that the greatest proportion of very happy people is in the above average, and married category. It also appears that there are most people married, as compared to any other marital status. Also, being above average, or average in income seems to make people less likely to be not too happy in general. I think this shows that financial security greatly increases the happiness of an individual. Both factors seem to greatly affect the happiness of a person. 
+
 
 Part III
 1. Gavin Hyde
